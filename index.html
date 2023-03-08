@@ -1,0 +1,151 @@
+<html lang="en">
+
+<head>
+  <title>Drag and Drop</title>
+  <meta name="description" content="Simple Kanban board project using vanilla JavaScript.">
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+</head>
+
+<body>
+  <div class="container-fluid">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light py-4">
+      <div class="container-fluid"><a class="navbar-brand mx-auto" href="#"><img class="img-fluid" src="img/logo.png"
+            alt="logo" width="32px" /></a></div>
+    </nav>
+
+    <!-- Kanban Board -->
+    <div class="mb-5 pb-5">
+      <h1 class="main-title">Kanban Board</h1>
+      <div class="drag-container">
+        <ul class="drag-list">
+          <!-- Backlog Column -->
+          <li class="drag-column backlog-column">
+            <span class="header">
+              <h1>Backlog</h1>
+            </span>
+            <!-- Backlog Content -->
+            <div id="backlog-content" class="custom-scroll">
+              <ul class="drag-item-list" id="backlog-list" ondrop="drop(event)" ondragover="allowDrop(event)"
+                ondragenter="dragEnter(0)"></ul>
+            </div>
+            <!-- Add Button Group -->
+            <div class="add-btn-group">
+              <div class="add-btn" onclick="showInputBox(0)">
+                <span class="plus-sign">+</span>
+                <span>Add Item</span>
+              </div>
+              <div class="add-btn solid" onclick="hideInputBox(0)">
+                <span>Save Item</span>
+              </div>
+            </div>
+            <div class="add-container">
+              <div class="add-item" contenteditable="true"></div>
+            </div>
+          </li>
+          <!-- Progress Column -->
+          <li class="drag-column progress-column">
+            <span class="header">
+              <h1>In Progress</h1>
+            </span>
+            <!-- Progress Content -->
+            <div id="progress-content" class="custom-scroll">
+              <ul class="drag-item-list" id="progress-list" ondrop="drop(event)" ondragover="allowDrop(event)"
+                ondragenter="dragEnter(1)"></ul>
+            </div>
+            <!-- Add Button Group -->
+            <div class="add-btn-group">
+              <div class="add-btn" onclick="showInputBox(1)">
+                <span class="plus-sign">+</span>
+                <span>Add Item</span>
+              </div>
+              <div class="add-btn solid" onclick="hideInputBox(1)">
+                <span>Save Item</span>
+              </div>
+            </div>
+            <div class="add-container">
+              <div class="add-item" contenteditable="true"></div>
+            </div>
+          </li>
+          <!-- Complete Column -->
+          <li class="drag-column complete-column">
+            <span class="header">
+              <h1>Complete</h1>
+            </span>
+            <!-- Complete Content -->
+            <div id="complete-content" class="custom-scroll">
+              <ul class="drag-item-list" id="complete-list" ondrop="drop(event)" ondragover="allowDrop(event)"
+                ondragenter="dragEnter(2)"></ul>
+            </div>
+            <!-- Add Button Group -->
+            <div class="add-btn-group">
+              <div class="add-btn" onclick="showInputBox(2)">
+                <span class="plus-sign">+</span>
+                <span>Add Item</span>
+              </div>
+              <div class="add-btn solid" onclick="hideInputBox(2)">
+                <span>Save Item</span>
+              </div>
+            </div>
+            <div class="add-container">
+              <div class="add-item" contenteditable="true"></div>
+            </div>
+          </li>
+          <!-- On Hold Column -->
+          <li class="drag-column on-hold-column">
+            <span class="header">
+              <h1>On Hold</h1>
+            </span>
+            <!-- On Hold Content -->
+            <div id="on-hold-content" class="custom-scroll">
+              <ul class="drag-item-list" id="on-hold-list" ondrop="drop(event)" ondragover="allowDrop(event)"
+                ondragenter="dragEnter(3)"></ul>
+            </div>
+            <!-- Add Button Group -->
+            <div class="add-btn-group">
+              <div class="add-btn" onclick="showInputBox(3)">
+                <span class="plus-sign">+</span>
+                <span>Add Item</span>
+              </div>
+              <div class="add-btn solid" onclick="hideInputBox(3)">
+                <span>Save Item</span>
+              </div>
+            </div>
+            <div class="add-container">
+              <div class="add-item" contenteditable="true"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footeer -->
+    <footer class="pt-5">
+      <div class="container text-center pb-5 border-bottom"><a class="d-inline-block mx-auto mb-4" href="#"><img
+            class="img-fluid" src="img/logo.png" alt="logo" width="64px" /></a>
+        <p class="text-center text-dark pb-2">DWilsonStudios &copy;2023. All rights reserved.</p>
+        <div>
+
+          <a class="d-inline-block me-4" href="https://twitter.com/dwilson_coder" target="_blank"><img
+              src="bootstrap5-plain-assets/socials/twitter.svg" /></a>
+          <a class="d-inline-block me-4" href="https://github.com/dwilsonstudios/" target="_blank"><img
+              src="bootstrap5-plain-assets/socials/github.svg" /></a>
+          <a class="d-inline-block" href="http://linkedin.com/in/damion-coder-wilson" target="_blank"><img
+              src="bootstrap5-plain-assets/socials/linkedin.svg" /></a>
+        </div>
+      </div>
+    </footer>
+  </div> <!-- Script -->
+  <script src="js/script.js"></script>
+  <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
